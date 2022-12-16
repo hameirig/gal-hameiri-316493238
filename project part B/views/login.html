@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="../static/pictures/icon.png">
+    <script defer src="../static/projectJS.js"></script>
+    <title>login</title>
+</head>
+
+<body dir="rtl">
+    <header>
+
+    <nav>
+        <ul>
+            <li><a href="login.html">התחבר לאתר</a></li>
+            <li><a href="new_account.html">צור חשבון</a></li>
+            <li><a href="search.html">חפש</a></li>
+            <li><a href="groups.html">קבוצות</a></li>
+            <li><a href="user_profile.html">הפרופיל שלי</a></li>
+            <li><a href="about_us.html">אודות</a></li>
+
+        </ul>
+    </nav>
+    
+    </header>
+
+    <div id="container">
+        <section class="login-page">
+            <h1>התחברות לאתר</h1><br>
+            <form action="search.html" method="post">
+                <label for="Email" >אימייל</label><br>
+                <input type="email" id="Email" name="Email" required/>
+                <p id="email-error"></p>
+                <label for="Password">סיסמה</label><br>
+                <input type="password" id="Password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="הסיסמה חייבת להכיל לפחות ספרה אחת ואות גדולה וקטנה אחת, ולפחות 8 תווים או יותר" required/><br>
+                <p id="pass-error"></p>
+                <button type="submit" class="button" onclick="checkValidMail(), checkValidPassward()">התחבר/י</button><br><br>
+            </form>
+            <a id="signUp" href="new_account.html">להרשמה לחצ/י כאן</a>
+        </section>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="../static/pictures/icon.png">
+    <script defer src="../static/projectJS.js"></script>
+    <title>groups</title>
+</head>
+
+<body dir="rtl">
+    <header>
+        
+
+        <nav>
+            <ul>
+                <li><a href="login.html">התחבר לאתר</a></li>
+                <li><a href="new_account.html">צור חשבון</a></li>
+                <li><a href="search.html">חפש</a></li>
+                <li><a href="groups.html">קבוצות</a></li>
+                <li><a href="user_profile.html">הפרופיל שלי</a></li>
+                <li><a href="about_us.html">אודות</a></li>
+    
+            </ul>
+        </nav>
+
+    </header>
+    
+    <h1>התחבר לקבוצה</h1>
+    <div class="container">
+        <div class="item">צור קבוצה <br>
+            <form action="" id="create_form" type="post">
+                <label for="gname">שם הקבוצה</label><br>
+                <input type="text" id="gname" name="gname" required/><br>
+                <label for="players">מספר שחקנים (2-30)</label><br>
+                <input type="number" id="players" name="players" min="2" max="30" required><br>
+                <button type="submit" id="create_btn" class="submit">צור קבוצה</button><br><br>
+            </form>
+            
+
+        </div>
+        
+        <div class="item">הצטרף לקבוצה קיימת
+            <form action="" id="join_form" type="post">
+                <label for="groupChoice">בחר קבוצה</label><br>
+                <input list="groups" id="groupChoice" name="groupChoice" required><br>
+                <datalist id="groups">
+                    <option value="תעשיה וניהול שנה ד">
+                    <option value="יא 7">
+                    <option value="החבר'ה">
+                    <option value="כדורגל רמה גבוהה בשלישי">
+                </datalist>
+                <button type="submit" id="join_btn" class="submit">הצטרף</button><br><br>
+            </form>
+
+
+
+
+        </div>
+    </div>
+
+    
+
+
+</body>
+</html>
+

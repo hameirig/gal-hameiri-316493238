@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="../static/pictures/icon.png">
+    <script defer src="../static/projectJS.js"></script>
+    <title>search</title>
+</head>
+
+<body dir="rtl" onload="setDT()">
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="login.html">התחבר לאתר</a></li>
+                <li><a href="new_account.html">צור חשבון</a></li>
+                <li><a href="search.html">חפש</a></li>
+                <li><a href="groups.html">קבוצות</a></li>
+                <li><a href="user_profile.html">הפרופיל שלי</a></li>
+                <li><a href="about_us.html">אודות</a></li>
+    
+            </ul>
+        </nav>
+
+    </header>
+
+    <div id="container">
+        <section class="search-page">
+            <h1>חפש מגרש</h1><br>
+            <form action="results.html" method="post">
+                <label for="cityChoice">בחר עיר</label><br>
+                <input list="cities" id="cityChoice" name="cityChoice" required><br>
+                <datalist id="cities">
+                    <option value="באר שבע">
+                    <option value="להבים">
+                    <option value="עומר">
+                    <option value="שדרות">
+                    </option value="אופקים">       
+                </datalist>
+                <label>בחר תאריך ושעה</label><br>
+                <input type="datetime-local" id="datetime" name="datetime" required><br>
+                <label for="price">מחיר מקסימלי</label><br>
+                <input type="number" id="price" name="price"><br>
+                <label for="surface">סוג משטח</label><br>
+                <select name="surface" id="surface">
+                    <option value="1">דשא</option>
+                    <option value="2">דשא סינטטי</option>
+                    <option value="3">אספלט</option>
+                </select><br>
+                <button type="submit" class="button">חפש</button><br><br>
+            </form>
+        </section>
+    </div>
+
+</body>
+</html>
+
