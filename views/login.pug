@@ -1,0 +1,16 @@
+extends main_layout
+block content
+    if msg
+        p #{msg}
+    section(class="login-page")
+        form(action="/loginData", method="post")
+            label(for="Email") אימייל
+            br
+            input(type="email", name="Email", id="Email", autocomplete="off", value=user_email || '', required="required")
+            p(style="font-weight: bold;") #{email_err || ''}
+            label(for="Password") סיסמה
+            br
+            input(type="password", name="Password", id="Password", autocomplete="off", required="required")
+            p(style="font-weight: bold;") #{pass_err || ''}
+            button(type="submit", class="button") התחבר/י
+        a(id="signUp", href="http://localhost:3000/new_account") להרשמה לחצ/י כאן

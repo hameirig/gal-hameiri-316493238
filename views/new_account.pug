@@ -1,0 +1,48 @@
+extends main_layout
+block content
+    section(class="sign-page")
+        form(action="/signUp", method="post")
+            label(for="fname") שם פרטי
+            br
+            if locals.newAccountDetails
+                input(type="text", name="fname", id="fname", value=newAccountDetails.first_name, required="required")
+            else 
+                input(type="text", name="fname", id="fname", required="required")
+            p #{fname_err || ''}
+            label(for="lname") שם משפחה
+            br
+            if locals.newAccountDetails
+                input(type="text", name="lname", id="lname", value=newAccountDetails.last_name, required="required")
+            else 
+                input(type="text", name="lname", id="lname", required="required")
+            p #{lname_err || ''}
+            label(for="phoneNumber") טלפון
+            br
+            if locals.newAccountDetails
+                input(type="tel", name="phoneNumber", id="phoneNumber", minlength="10", maxlength="10", value=newAccountDetails.phone_number, required="required")
+            else
+                input(type="tel", name="phoneNumber", id="phoneNumber", minlength="10", maxlength="10", required="required")
+            br
+            label(for="cityChoice") בחר עיר
+            br
+            input(list="cities", name="cityChoice", id="cityChoice", required="required")
+            br
+            datalist(id="cities")
+                option(value="באר שבע")
+                option(value="להבים")
+                option(value="עומר")
+                option(value="שדרות")
+                option(value="אופקים")    
+            label(for="Email") אימייל
+            br
+            if locals.newAccountDetails
+                input(type="email", name="Email", id="Email", value=newAccountDetails.email, required="required")            
+            else 
+                input(type="email", name="Email", id="Email", required="required")
+            p #{email_err || ''}
+            label(for="Password") סיסמה
+            br
+            input(type="password", name="Password", id="Password", required="required")
+            br
+            p #{pass_err || ''}
+            button(type="submit", class="button") הרשמ/י

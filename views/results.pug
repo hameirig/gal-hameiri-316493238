@@ -1,0 +1,22 @@
+extends tables_layout
+block content
+
+    thead
+        tr
+            td שם
+            td כתובת
+            td עיר
+            td סוג משטח
+            td גודל
+            td מחיר
+            td פרטי קשר
+    tbody
+    each court in court_list
+        tr
+            td= court.court_name 
+            td= court.address
+            td= court.city
+            td= court.surface
+            td= court.size
+            td= court.price
+            td= court.contact_phone

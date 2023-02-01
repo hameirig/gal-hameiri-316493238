@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/style.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        link(rel="icon", href="/pictures/icon.png")
+        script(src="/js/projectJS.js", defer) 
+        title #{title}
+
+    body(dir="rtl")
+        if user_login === false
+            header
+                li
+                    a(href="/login") התחבר לאתר
+                li
+                    a(href="/new_account") צור חשבון
+                li
+                    a(href="/search") חפש
+                li 
+                    a(href="/about_us") אודות
+        else
+            header
+                li
+                    a(onclick="logout_alert()") התנתק 
+                li
+                    a(href="/search") חפש
+                li
+                    a(href="/groups") קבוצות
+                li 
+                    a(href="/user_profile") הפרופיל שלי
+                li
+                    a(href="/about_us") אודות
+        
+        h1 #{page_h1}
+        div(class="container")
+            block content
+
