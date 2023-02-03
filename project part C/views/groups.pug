@@ -1,0 +1,39 @@
+extends main_layout
+block content
+    div(class="item") צור קבוצה
+        br
+        form(action="/newGroup", id="create_form", method="post")
+            label(for="gname") שם הקבוצה
+            br
+            input(type="text", name="gname", id="gname", required="required")
+            p #{create_msg || ''}
+            label(for="cityChoice") בחר עיר
+            br
+            input(list="cities", name="cityChoice", id="cityChoice", required="required")
+            br
+            datalist(id="cities")
+                option(value="באר שבע")
+                option(value="להבים")
+                option(value="עומר")
+                option(value="שדרות")
+                option(value="אופקים")
+            label(for="players") מספר שחקנים (2-30)
+            br
+            input(type="number", name="players", id="players", min="2", max="30", required="required")
+            br
+            button(type="submit", name="create_btn", id="create_btn", class="submit") צור קבוצה
+            br
+            br
+
+    div(class="item") הצטרף לקבוצה קיימת
+        form(action="/checkJoin", id="join_form", method="post")
+            label(for="groupChoice") בחר קבוצה 
+            br
+            select(name="groupChoice", id="groupChoice")
+                each group in groupsList
+                    option(value=group.group_name) #{group.group_name}
+            br
+            button(type="submit", name="join_btn", id="join_btn", class="submit") הצטרף
+            br
+            br
+            p #{join_msg || ''}
