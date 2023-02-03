@@ -1,0 +1,20 @@
+extends tables_layout
+block content
+    if deleted_msg
+        p #{deleted_msg}
+    thead
+        tr
+            td
+            td שם
+            td עיר
+            td מספר שחקנים
+            td מספר שחקנים מקסימלי
+    tbody
+    each group in group_list
+        tr
+            td 
+                a(href="/removeGroup/"+group.group_name, class="fa fa-trash", title="מחק קבוצה")
+            td= group.group_name 
+            td= group.city
+            td= group.players_number
+            td= group.max_players
